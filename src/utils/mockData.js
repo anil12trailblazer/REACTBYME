@@ -1,41 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://www.creativefabrica.com/wp-content/uploads/2023/06/10/Fast-Food-Burger-Logo-Graphics-71757839-1.jpg"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-const RestoCard = ({ resData }) => {
-  const { name, cuisines, costForTwo, sla, locality } = resData?.info;
-  return (
-    <div className="rest-card">
-      <img
-        className="food-img"
-        src="https://tse4.mm.bing.net/th/id/OIP.P3b2dLEmWw_-dDhJs_ajfQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
-      />
-      <h4>{name + " - " + locality}</h4>
-      <h5>{cuisines[0]}</h5>
-      <h5>{costForTwo}</h5>
-      <h5>{sla.slaString}</h5>
-    </div>
-  );
-};
 const restList = [
   {
     info: {
@@ -120,8 +82,8 @@ const restList = [
       areaName: "City Center",
       costForTwo: "₹500 for two",
       cuisines: ["Indian", "North Indian", "Biryani"],
-      avgRating: 4.2,
-      avgRatingString: "4.2",
+      avgRating: 3.2,
+      avgRatingString: "3.2",
       totalRatingsString: "12K+ ratings",
       veg: false,
       sla: {
@@ -145,8 +107,8 @@ const restList = [
       areaName: "East District",
       costForTwo: "₹350 for two",
       cuisines: ["Chinese", "Asian", "Thai"],
-      avgRating: 4.4,
-      avgRatingString: "4.4",
+      avgRating: 3.4,
+      avgRatingString: "3.4",
       totalRatingsString: "9K+ ratings",
       veg: false,
       sla: {
@@ -195,8 +157,8 @@ const restList = [
       areaName: "Uptown",
       costForTwo: "₹800 for two",
       cuisines: ["Japanese", "Sushi", "Asian"],
-      avgRating: 4.8,
-      avgRatingString: "4.8",
+      avgRating: 3.8,
+      avgRatingString: "3.8",
       totalRatingsString: "5K+ ratings",
       veg: false,
       sla: {
@@ -262,26 +224,4 @@ const restList = [
   },
 ];
 
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search"> Search Food</div>
-      <div className="res-container">
-        {restList.map((restaurant) => (
-          <RestoCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default restList;
