@@ -18,19 +18,38 @@
   margin: 5px;
 }
 .rest-card {
-  background-color: cornsilk;
-  padding: 5px;
-  width: 150px;
-  margin: 5px;
+  margin: 12px;
+  width: 250px;
+  background-color: white;
+  border-radius: 16px;
+  filter: drop-shadow(rgba(27, 30, 36, 0.08) 0px 0px 7.905px);
+  border: 1px solid rgba(2, 6, 12, 0.08);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .rest-card:hover {
-  border: solid 1px gray;
   cursor: pointer;
 }
 .food-img {
-  width: 150px;
+  width: 250px;
+  height: 250px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 .res-container {
   display: flex;
   flex-wrap: wrap;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  height: 300px;
+  margin: 16px;
+  width: 250px;
+  background-color: white;
+  border-radius: 16px;
+  filter: drop-shadow(rgba(27, 30, 36, 0.08) 0px 0px 7.905px);
+  border: 1px solid rgba(2, 6, 12, 0.08);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }

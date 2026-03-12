@@ -1,14 +1,16 @@
-import { FOOD_URL } from "../utils/constants";
+import { FOOD_URL, CDN_URL } from "../utils/constants";
 
 const RestoCard = ({ resData }) => {
-  const { name, cuisines, costForTwo, sla, locality } = resData?.info;
+  const { name, cuisines, costForTwo, sla, locality, cloudinaryImageId } =
+    resData?.info;
   return (
     <div className="rest-card">
-      <img className="food-img" src={FOOD_URL} />
-      <h4>{name + " - " + locality}</h4>
-      <h5>{cuisines[0]}</h5>
-      <h5>{costForTwo}</h5>
-      <h5>{sla.slaString}</h5>
+      <img className="food-img" src={CDN_URL + cloudinaryImageId} />
+      <h5>{name + " - " + locality}</h5>
+      <h6>{cuisines.join(", ")}</h6>
+      <h6>{costForTwo}</h6>
+      <h6>{sla.slaString}</h6>
+      {/* <h6>User : {loggedInUser}</h6> */}
     </div>
   );
 };
