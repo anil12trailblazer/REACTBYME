@@ -2,11 +2,11 @@
 const express = require("express");
 const cors = require("cors");
 const { createProxyMiddleware } = require("http-proxy-middleware");
-
+const path = require('cors');
 const app = express();
 app.use(cors());
 
-app.use(
+/*app.use(
   "/api",
   createProxyMiddleware({
     target: "https://www.swiggy.com",
@@ -16,7 +16,7 @@ app.use(
     headers: {
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
-      Accept: "application/json, text/plain, */*",
+      Accept: "application/json, text/plain, **",
     },
   })
 );
@@ -37,6 +37,21 @@ app.use(
       console.error("Media proxy error:", err?.message || err);
       if (!res.headersSent) res.writeHead(502);
       res.end("Bad Gateway (media upstream)");
+    },
+  })
+);*/
+
+app.use(
+  "/api",
+  createProxyMiddleware({
+    target: "https://www.swiggy.com",
+    changeOrigin: true,
+    secure: false,
+    pathRewrite: { "^/api": "" },
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
+      Accept: "application/json, text/plain, **",
     },
   })
 );
