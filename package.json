@@ -10,7 +10,9 @@
   "author": "Anil",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.16.4"
+    "parcel": "^2.16.4",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^3.4.19"
   },
   "dependencies": {
     "cors": "^2.8.6",

@@ -1,4 +1,9 @@
-.header {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* .header {
   display: flex;
   justify-content: space-between;
   border: solid 1px;
@@ -91,4 +96,4 @@
   border: solid 1px;
   border-radius: 4px;
   box-sizing: border-box;
-}
+} */

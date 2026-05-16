@@ -1,8 +1,8 @@
 const Contact = () =>{
     return(
-        <div>
-            <h1>Contact Us</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
+        <div className="p-8">
+            <h1 className="text-2xl font-bold">Contact Us</h1>
+            <p className="text-slate-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
         </div>
     )   
 }
