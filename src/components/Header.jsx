@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlinesStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 export const Header = () => {
   const [btnNemeReact, setBtnNameReact] = useState("Login"); //login is inital value
   const isonline = useOnlinesStatus();
   console.log("Header render");
+  const user = useContext(UserContext);
   return (
     <div className="flex justify-between shadow-lg">
       <div className="p-2 m-2">
@@ -20,6 +22,7 @@ export const Header = () => {
           <li className="p-2"><Link to="/contact">Contact</Link></li>
           <li className="p-2"><Link to="/cart">Cart</Link></li>
           <li className="p-2"><Link to="/grosery">Grosery</Link></li>
+          <li className="p-2">{user.name}</li>
           <li className="p-2">
             <button
               className="login"

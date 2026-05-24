@@ -1,15 +1,17 @@
 import RestoCard, {withPromotedRestoCard} from "./RestoCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./shimmer";
 import { DATA_API } from "../utils/constants";
 import useOnlinesStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/userContext";
 const Body = () => {
   const [restroList, setRestList] = useState([]);
   const [filterRestroList, setFilterRestList] = useState([]);
   const [searchText, setSearchText] = useState("");
   console.log(searchText);
   const PromotedRestoCard = withPromotedRestoCard(RestoCard);
+  const { name, setUser } = useContext(UserContext);
   useEffect(() => {
     fetchData();
   }, []);
@@ -69,10 +71,12 @@ const Body = () => {
         >
           Clear Filter
         </button>
+        <label className="flex items-center gap-2">updateUser : </label>
+        <input className="border border-black" type="text" value={name} onChange={(e) => (setUser(e.target.value))}/> 
       </div>
       <div className="flex flex-wrap">
         {filterRestroList.map((restaurant) => (
-          <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}>
+          <Link key={restaurant.info.id} to={"/restaurant"}>
             {restaurant.info.promoted ? (<PromotedRestoCard key={restaurant.info.id} resData={restaurant} />) : (
               <RestoCard key={restaurant.info.id} resData={restaurant} />
             )}

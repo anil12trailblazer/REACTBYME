@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../utils/userContext";
 
 class UserClass extends React.Component {
     constructor(props) {
@@ -27,8 +28,12 @@ class UserClass extends React.Component {
         
         const { Name, Location, Hobby } = this.props;
         const { count } = this.state;
+
         return (
             <div className="p-4 m-4 border border-slate-200 rounded-md">
+                <UserContext.Consumer>
+                    {({ name }) => <h1 className="font-bold text-lg">Context Value : {name}</h1>}
+                </UserContext.Consumer>
                 <h1 className="font-bold">Name : {Name}</h1>
                 <h1 className="font-bold">Location : {Location}</h1>
                 <h1 className="font-bold">Hobby : {Hobby}</h1>

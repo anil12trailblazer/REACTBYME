@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react";
+import React, {lazy, Suspense, useState, useEffect} from "react";
 import ReactDOM from "react-dom/client";
 import { Header } from "./components/Header";
 import Body from "./components/Body";
@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import UserContext from "./utils/userContext";
 // import Grosery from "./components/Grosery";
 // cunking
 // lazy loading
@@ -19,10 +20,21 @@ const Grosery = lazy(() => import("./components/Grosery"));
 
 
 const AppLayout = () => {
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    const data = {
+      userName: "Anil Maurya"
+    }
+    setUser(data.userName);
+  }, []);
+
   return (
     <div className="app">
+      <UserContext.Provider value={{name:user, setUser}}>
       <Header />
       <Outlet />
+      </UserContext.Provider>
     </div>
   );
 };
@@ -44,11 +56,11 @@ const appRouter = createBrowserRouter([
         element: <Contact />
       },
       {
-        path: "restaurant/:resId",
+        path: "/restaurant",
         element: <RestaurantMenu />
       },
       {
-        path: "grosery",
+        path: "/grosery",
         element: <Suspense fallback={<h1>Loading...</h1>}><Grosery /></Suspense>
       }
     ],

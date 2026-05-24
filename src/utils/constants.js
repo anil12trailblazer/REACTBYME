@@ -18,4 +18,4 @@ export const FOOD_URL =
 
   // export const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=443036";
 
-  export const MENU_API = "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9985859&lng=77.59202060000001&restaurantId=";
+  export const MENU_API = "http://localhost:5000/api/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9985859&lng=77.59202060000001&restaurantId=";

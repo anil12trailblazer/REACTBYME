@@ -21,9 +21,9 @@ class About extends Component {
             <div className="p-8">
                 <h1 className="text-2xl font-bold">About Us</h1>
                 <p className="text-slate-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
-                <User Name="Anil" Location="Pune" Hobby="Coding" />
+                {/* <User Name="Anil" Location="Pune" Hobby="Coding" /> */}
 
-                {/* <UserClass Name="Anil" Location="Pune" Hobby="Coding" /> */}
+                <UserClass Name="Anil" Location="Pune" Hobby="Coding" />
             </div>
         )
     }
